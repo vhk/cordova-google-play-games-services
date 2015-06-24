@@ -51,18 +51,14 @@
 
         <source-file src="src/android/gamehelper_strings.xml" target-dir="res/values" />
 
-        <config-file target="AndroidManifest.xml" parent="/manifest/application">
-            <meta-data android:name="com.google.android.gms.version"
-                android:value="@integer/google_play_services_version"/>
-            <activity android:name="com.intel.GooglePlayGamesService">
-        </activity>
-            <meta-data android:name="com.google.android.gms.games.APP_ID" android:value="@string/google_play_services_app_id" />
-        </config-file>
-
         <config-file target="AndroidManifest.xml" parent="/manifest">
+            <application>    
+                <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+                <activity android:name="com.intel.GooglePlayGamesService"></activity>
+                <meta-data android:name="com.google.android.gms.games.APP_ID" android:value="@string/google_play_services_app_id" />
+            </application>
             <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS" />
         </config-file>
-
 
         <source-file src="src/android/GooglePlayGamesService.java"
             target-dir="src/com/intel"/>
